@@ -19,8 +19,18 @@ Route::get('/', function () {
 
 // Exsample route
 Route::get('/about', function () {
-    echo "Hello Laravel";
+return view('about');
 });
+
+Route::get('/member', function () {
+    return view('member.index');
+});
+
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+
+
 
 Route::get('/users/{fname}/{lname}', function ($fname,$lname) {
     echo "RMZ Studio...$fname  $lname";
