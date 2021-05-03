@@ -11,7 +11,12 @@ class AboutController extends Controller
         $tel = "043 043 888";
         $email = "romn-parinya@cho.co.th";
         //return view('about',['address'=>$address, 'tel'=>$tel,'email'=>$email]); //รูปแบบแรก
-        return view('about',compact('address','tel','email')); //รูปแบบที่สอง
+        //return view('about',compact('address','tel','email')); //รูปแบบที่สอง
+        return view('about') //รูปแบบที่สาม
+        ->with('address',$address)
+        ->with('tel',$tel)
+        ->with('email',$email)
+        ->with('error','404 Not Found');
     }
 
     function showData(){
