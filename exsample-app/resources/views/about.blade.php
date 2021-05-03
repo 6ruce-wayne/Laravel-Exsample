@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About this website RMZ Studio</title>
+    <title>เกี่ยวกับเรา</title>
 </head>
 <body>
     <a href="{{url('/')}}">Home</a>
     <a href="{{route('member')}}">Member</a>
     <a href="{{route('admin')}}">Admin</a>
     <a href="{{route('about')}}">About</a>
-<h1>Welcome to RMZ Studio</h1>
+<h1>เกี่ยวกับผู้พัฒนาเว็บ</h1>
+<p> Address: {{$address}}</p>
+<p> Tel: {{$tel}}</p>
+<p> Email <a href="mailto:{{$email}}">{{$email}}</a></p>
 <p>
     บิ๊ก พันธกิจศิรินทร์แซมบ้า เที่ยงคืนดยุกรันเวย์ เซาท์ เอ๋อิมพีเรียล ทำงานจิ๊กธรรมาภิบาลเชอร์รี่ ซิมโฟนี่เซลส์แมน ซ้อไพลินคลาสสิกโดมิโน โต๋เต๋อัลบัมไบเบิล อึ๋มเป่ายิ้งฉุบทรูพล็อตเดชานุภาพ อินดอร์โมเดล แม็กกาซีนบึมซัพพลายเออร์ง่าว ไลฟ์รูบิก นอร์ทเพียบแปร้แฮปปี้เดอะกุนซือ เซ็กซ์ฟรุตคันธาระแมคเคอเรลสโตร์ เทอร์โบราชานุญาตสวีท
 
