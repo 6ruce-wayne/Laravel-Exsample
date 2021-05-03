@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +20,7 @@ Route::get('/', function () {
 });
 
 // Exsample route
-Route::get('/about', function () {
-return view('about');
-});
+Route::get('/about',[AboutController::class,'index']);
 
 Route::get('/member', function () {
     return view('member.index');
