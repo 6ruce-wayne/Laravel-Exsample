@@ -16,10 +16,8 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->user == "RMZ"){
-            return redirect('/admin');
-        }else{
-            return redirect('/');
+        if(!$request->user == "RMZ" && $request->age<20 ){
+            return redirect(route('home'));
         }
         return $next($request);
     }

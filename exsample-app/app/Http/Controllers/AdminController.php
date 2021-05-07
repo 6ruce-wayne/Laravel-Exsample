@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     function index(){
-        return view('admin.index');
+        $user = $_REQUEST['user'];
+        return view('admin.index')->with('user',$user);
     }
 }

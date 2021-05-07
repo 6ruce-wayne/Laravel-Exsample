@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // Exsample route
 Route::get('/about',[AboutController::class,'index'])->name('about');

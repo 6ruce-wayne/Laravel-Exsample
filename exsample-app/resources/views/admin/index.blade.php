@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Admin</title>
 </head>
 <body>
     @php
-        $user="RMZ";
         $arr = array("Home","Member","About","Contact");
     @endphp
     @foreach ($arr as $menu)
@@ -20,6 +19,10 @@
         @endfor
 
     </ul>
+    <a href="{{url('/')}}">Home</a>
+    <a href="{{route('member')}}">Member</a>
+    <a href="{{route('admin')}}">Admin</a>
+    <a href="{{route('about')}}">About</a>
 
     <h1>Welcome back to admin :{{$user}}</h1>
     @if($user == "RMZ")
