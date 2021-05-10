@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\DB;
 class DepartmentController extends Controller
 {
     public function index(){
-        $department= Department::all();
+
+        // Eloquent
+        $department= Department::paginate(3); //ดึงเป็นหน้า
+        //$department= Department::all();
+        //$department = DB::table('departments')->get(); //QueryBuilder
         return view('admin.department.index',compact('department'));
     }
     public function store(Request $request){

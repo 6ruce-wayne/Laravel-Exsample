@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                <div class="col-md-8">
-                   @if (session("success"))
+                   @if (session("success")) <!-- แสดงข้อความ Session -->
                     <div class="alert alert-success">{{session('success')}}</div>
                    @endif
                    <b class="card">
@@ -43,6 +43,7 @@
                         @endforeach
                     </tbody>
                   </table>
+                 {{$department->links()}} <!-- แสดงลิงค์ หน้า -->
                </div>
                <div class="col-md-4">
                 <div class="card">
