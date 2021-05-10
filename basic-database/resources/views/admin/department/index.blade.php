@@ -28,7 +28,7 @@
                         @php ($i=1)
                         @foreach ($department as $row)
                         <tr>
-                            <th>{{$i++}}</th>
+                            <th>{{$department->firstItem()+$loop->index}}</th> <!-- แสดงลำดับ -->
                             <td>{{$row->department_name}}</td>
                             <td>{{$row->userid}}</td>
                             <!-- <td>{$row->created_at->diffForHumans()}}</td> จาก Model -->
