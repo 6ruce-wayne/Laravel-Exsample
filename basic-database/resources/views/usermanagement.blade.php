@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
            ข้อมูลผู้ใช้  ยินดีต้อนรับ, {{Auth::user()->name}}
-           <b class="float-right">จำนวนผู้ใช้งานทั้งหมด {{count($user)}} คน </b>
+
         </h2>
     </x-slot>
 
@@ -15,7 +15,7 @@
                         <th scope="col">ลำดับ</th>
                         <th scope="col">ชื่อ</th>
                         <th scope="col">อีเมล์</th>
-                        <th scope="col">เริ่มใช้งานระบบ</th>
+                        <th scope="col">เข้าสู่ระบบ</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -25,8 +25,7 @@
                             <th>{{$i++}}</th>
                             <td>{{$row->name}}</td>
                             <td>{{$row->email}}</td>
-                            <!-- <td>{$row->created_at->diffForHumans()}}</td> จาก Model -->
-                            <td>{{Carbon\Carbon::parse($row->created_at)->diffForHumans()}}</td>
+                            <td>{{$row->created_at}}</td>
                           </tr>
                         @endforeach
                     </tbody>

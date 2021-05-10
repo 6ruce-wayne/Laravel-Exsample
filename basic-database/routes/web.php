@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use GuzzleHttp\RetryMiddleware;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +21,10 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $user = User::all(); //มาจาก Model user
+ //   $user = User::all(); //มาจาก Model user
+    $user=DB::table('users')->get();
     return view('dashboard',compact('user'));
 })->name('dashboard');
+
+Route::get('department/all',[DepartmentController::class,'index'])->name('department');
+Route::post('department/add',[DepartmentController::class,'store'])->name('addDepartment');
