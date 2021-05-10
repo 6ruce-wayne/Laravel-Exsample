@@ -26,5 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard',compact('user'));
 })->name('dashboard');
 
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){ //กำหนด middleware แบบกลุ่ม
 Route::get('department/all',[DepartmentController::class,'index'])->name('department');
 Route::post('department/add',[DepartmentController::class,'store'])->name('addDepartment');
+});
