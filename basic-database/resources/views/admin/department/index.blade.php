@@ -20,7 +20,7 @@
                       <tr>
                         <th scope="col">ลำดับ</th>
                         <th scope="col">ชื่อแผนก</th>
-                        <th scope="col">User ID</th>.
+                        <th scope="col">ผู้บันทึก</th>.
                         <th scope="col">สร้างเมื่อ</th>
                       </tr>
                     </thead>
@@ -30,7 +30,8 @@
                         <tr>
                             <th>{{$department->firstItem()+$loop->index}}</th> <!-- แสดงลำดับ -->
                             <td>{{$row->department_name}}</td>
-                            <td>{{$row->userid}}</td>
+                            <td>{{$row->name}}</td> <!-- Querybuilder -->
+                            <!-- <td> /*$row->user->name}}*/</td>  Eloquent -->
                             <!-- <td>{$row->created_at->diffForHumans()}}</td> จาก Model -->
                             <td>
                                 @if ($row->created_at == NULL)

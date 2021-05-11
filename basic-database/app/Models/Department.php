@@ -16,4 +16,8 @@ class Department extends Model
         'department_name'
     ];
 
+    public function user(){
+                return $this->hasOne(User::class,'id','userid'); // Eloquent join table
+    }
+
 }

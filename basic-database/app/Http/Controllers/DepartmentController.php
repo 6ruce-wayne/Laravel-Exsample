@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\DB;
 class DepartmentController extends Controller
 {
     public function index(){
-
-        // Eloquent
-        //$department= Department::paginate(3); //ดึงเป็นหน้า
-        //$department= Department::all();
-        $department = DB::table('departments')->paginate(4); //QueryBuilder //ดึงเป็นหน้า
+        //$department= Department::paginate(3); //ดึงเป็นหน้า // Eloquent
+        //$department= Department::all(); // Eloquent
+        // $department = DB::table('departments')->paginate(4); //QueryBuilder //ดึงเป็นหน้า
         //$department = DB::table('departments')->get(); //QueryBuilder
+        $department = DB::table('departments') // QueryBuilder ่join table
+        ->join('users','departments.userid','users.id')
+        ->select('departments.*','users.name')
+        ->paginate(5);
         return view('admin.department.index',compact('department'));
     }
     public function store(Request $request){
