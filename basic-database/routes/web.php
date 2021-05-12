@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepartmentController;
+use App\Models\Department;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use GuzzleHttp\RetryMiddleware;
@@ -29,4 +30,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){ //กำหนด middleware แบบกลุ่ม
 Route::get('department/all',[DepartmentController::class,'index'])->name('department');
 Route::post('department/add',[DepartmentController::class,'store'])->name('addDepartment');
+Route::get('department/edit/{id}',[DepartmentController::class,'edit'])->name('editDepartment');
+Route::post('department/update/{id}',[DepartmentController::class,'update'])->name('updateDepartment');
+
+Route::get('department/delete/{id}',[DepartmentController::class,'softDelete'])->name('deleteDepartment');
+Route::get('department/restore/{id}',[DepartmentController::class,'restore'])->name('restoreDepartment');
+
+
 });
