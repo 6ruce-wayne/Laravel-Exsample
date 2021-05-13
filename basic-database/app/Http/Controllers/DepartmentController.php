@@ -8,11 +8,12 @@ use App\Models\Department;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+use function GuzzleHttp\Promise\all;
 
 class DepartmentController extends Controller
 {
     public function index(){
-        $department= Department::paginate(5); //ดึงเป็นหน้า // Eloquent
+        $department= Department::paginate(5);//ดึงเป็นหน้า // Eloquent
         $trashDepartment = Department::onlyTrashed()->paginate(2); //onlytrashed ถังขยะ
         //$department= Department::all(); // Eloquent
         // $department = DB::table('departments')->paginate(4); //QueryBuilder //ดึงเป็นหน้า

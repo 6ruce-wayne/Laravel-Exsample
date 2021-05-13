@@ -42,8 +42,8 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{url('department/edit/'.$row->id)}}" class="btn btn-primary">แก้ไข</a>
-                                    <a href="{{url('department/softDelete/'.$row->id)}}" class="btn btn-warning">ลบ</a>
+                                    <a href="{{url('department/edit/'.$row->id)}}" class="btn btn-primary"> <i class="fas fa-pencil-alt"></i> แก้ไข</a>
+                                    <a href="{{url('department/softDelete/'.$row->id)}}" class="btn btn-warning"><i class="fas fa-eraser"></i> ลบ</a>
                                 </td>
                             </tr>
                             @endforeach
