@@ -33,8 +33,9 @@ Route::post('department/add',[DepartmentController::class,'store'])->name('addDe
 Route::get('department/edit/{id}',[DepartmentController::class,'edit'])->name('editDepartment');
 Route::post('department/update/{id}',[DepartmentController::class,'update'])->name('updateDepartment');
 
-Route::get('department/delete/{id}',[DepartmentController::class,'softDelete'])->name('deleteDepartment');
+Route::get('department/softDelete/{id}',[DepartmentController::class,'softDelete'])->name('deleteDepartment');
 Route::get('department/restore/{id}',[DepartmentController::class,'restore'])->name('restoreDepartment');
+Route::get('department/delete/{id}',[DepartmentController::class,'delete'])->name('deleteDepartment');
 
 
 });

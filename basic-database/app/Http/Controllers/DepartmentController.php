@@ -74,11 +74,16 @@ class DepartmentController extends Controller
 
     public function softDelete($id){
        $delete = Department::find($id)->delete(); //ลบชั่วคราว
-       return redirect()->route('department')->with('seccess',"ลบข้อมูลเรียบร้อย");
+       return redirect()->back()->with('success',"ลบข้อมูลเรียบร้อย");
     }
 
     public function restore($id){
        $resotre = Department::withTrashed()->find($id)->restore();  //กู้คืน
-       return redirect()->back()->with('seccess',"กู้คืนข้อมูลเรียบร้อย");
+       return redirect()->back()->with('success',"กู้คืนข้อมูลเรียบร้อย");
+     }
+
+     public function delete($id){
+        $delete = Department::onlyTrashed()->find($id)->forceDelete();//ลบถาวร
+        return redirect()->back()->with('success',"ลบข้อมูลเรียบร้อย");
      }
 }
